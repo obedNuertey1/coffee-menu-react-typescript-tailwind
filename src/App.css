@@ -1,4 +1,8 @@
+*, *::after, *::before{
+  --mycolor: brown;
+} 
 .chat-notification {
   display: flex;
   max-width: 24rem;
-}/*# sourceMappingURL=App.css.map */
+  background-color: var(--mycolor);
+}

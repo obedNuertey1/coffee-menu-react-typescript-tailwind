@@ -1,34 +1,23 @@
 import './App.css'
 import coffeCup from "./assets/image.png";
 import dessert from "./assets/image2.png";
+import Foods from './components/GenerateFoods';
 
-// How the foodstuffs object should be
-interface Ifoodstuff<T>{
-  name: String;
-  price: T;
-}
 // Array of Coffee flavors
-const firstSection:Ifoodstuff<string>[] = [{name: "French Vanilla", price: "3.00"}, {name: "Caramel Macchiato", price: "3.75"}, {name: "Pumpkin Spice", price: "3.75"}, {name: "Hazelnut", price: "4.00"}, {name: "Mocha", price: "4.50"}]
+const firstSection:Foods.Ifoodstuff<string>[] = [{name: "French Vanilla", price: "3.00"}, {name: "Caramel Macchiato", price: "3.75"}, {name: "Pumpkin Spice", price: "3.75"}, {name: "Hazelnut", price: "4.00"}, {name: "Mocha", price: "4.50"}]
 
 // Array of desserts
-const secondSection:Ifoodstuff<string>[] = [{name: "Donut", price: "1.50"}, {name: "Cherry Pie", price: "2.75"}, {name: "Cheesecake", price:"3.00"}, {name: "Cinnamon Roll", price: "2.50"}];
+const secondSection:Foods.Ifoodstuff<string>[] = [{name: "Donut", price: "1.50"}, {name: "Cherry Pie", price: "2.75"}, {name: "Cheesecake", price:"3.00"}, {name: "Cinnamon Roll", price: "2.50"}];
 
-// Generate foodStuffs and their prices in jsx article format
-function generateFoods(itemList:Ifoodstuff<string>[]):JSX.Element[]{
-  return itemList.map((elem:Ifoodstuff<string>)=>{
-    return (
-      <article className="block">
-        <p className="mt-1 mb-1 text-left inline-block w-1/2">{elem.name}</p><p className="mt-1 mb-1 text-right inline-block w-1/2">{elem.price}</p>
-      </article>
-    );
-  }); 
-}
+// Call the GenerateFoods object and pass it firstSection and secondSection as list of foods
+const generateFirstFoodList = new Foods.GenerateFoods<Foods.Ifoodstuff<String>>(firstSection);
+const generateSecondFoodList = new Foods.GenerateFoods<Foods.Ifoodstuff<String>>(secondSection);
 
 
 const App = ():JSX.Element => {
 
-  const coffee:JSX.Element[] = generateFoods(firstSection);
-  const myDessert:JSX.Element[] = generateFoods(secondSection);
+  const coffee:JSX.Element[] = generateFirstFoodList.generateFoods();
+  const myDessert:JSX.Element[] = generateSecondFoodList.generateFoods();
 
   return (
     <>

@@ -31,11 +31,32 @@ If you are developing a production application, we recommend updating the config
 ```npm run dev``` to start the development server press "o" to view this project in the webpage and 
 ```npx cypress open``` to start writing tests
 
+# The Coffee Application architecture
+
 ```mermaid
 graph TD;
+subgraph "Foods Namespace"
+  GenerateFoods --> Ifoodstuff
+  GenerateFoods --> listOfFoodStuffs
+  listOfFoodStuffs --> firstSection
+  listOfFoodStuffs --> secondSection
+end
 
-A-->B-->C
-B-->A-->D-->A-->`
+subgraph "App Component"
+  App --> Coffee
+  App --> myDessert
+end
+
+subgraph "tailwindcss Styling"
+  App --> A[CSS Styles]
+  App --> B[other jsx]
+end
+
+subgraph "Static Assets"
+  A[CSS Styles] --> C[coffeCup.png]
+  A[CSS Styles] --> D[dessert.png]
+end
 ```
+
 ## My Tests
 [app.cy.tsx](./cypress/component/app.cy.tsx)

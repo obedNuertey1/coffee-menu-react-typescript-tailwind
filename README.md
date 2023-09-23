@@ -30,3 +30,12 @@ If you are developing a production application, we recommend updating the config
 ## Getting things started
 ```npm run dev``` to start the development server and
 ```npx cypress open``` to start writing tests
+
+```mermaid
+graph TD;
+
+A-->B-->C
+B-->A-->D-->A-->`
+```
+## My Tests
+[app.cy.tsx](./cypress/component/app.cy.tsx)

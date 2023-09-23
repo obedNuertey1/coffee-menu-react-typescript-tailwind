@@ -5,8 +5,14 @@ export default {
     extend: {
       colors:{
         "twitter-blue": "#1DA1F2",
-        "burlywood": "burlywood"
+        "burlywood": "burlywood",
+        "brown": "brown"
       },
+      fontFamily:{
+        'impact': "Impact, serif",
+        'helvetica': "Helvetica Neue, Helvetica, Arial, sans-serif",
+        'playfair': "Playfair Display, serif"
+      }
     },
   },
   plugins: [],

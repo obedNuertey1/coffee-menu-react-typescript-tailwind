@@ -28,7 +28,7 @@ If you are developing a production application, we recommend updating the config
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 ## Getting things started
-```npm run dev``` to start the development server and
+```npm run dev``` to start the development server press "o" to view this project in the webpage and 
 ```npx cypress open``` to start writing tests
 
 ```mermaid
